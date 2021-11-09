@@ -10,10 +10,16 @@
   <body>
     <h1>Hi, Vue</h1>
     <div id="app">
-      <p>{{ title }} - {{ age }}</p>
+      <div v-if="showTitle"><p>{{ title }} - {{ age }}</p></div>
+
       <button v-on:click="age++">Increase Age</button>
       <button v-on:click="age--">Decrease Age</button>
       <button @click="changeTitle('Lord of the rings')">Change Title</button>
+
+      <button @click="toggleShowTitle">
+        <span v-if="showTitle">Hide</span>
+        <span v-if="!showTitle">Show</span>
+      </button>
     </div>
     <script src="/app.js"></script>
   </body>
